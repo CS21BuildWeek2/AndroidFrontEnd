@@ -8,6 +8,6 @@ import dev.vespertine.treasurehunt.activity.MainActivity
 abstract class BuildersModule {
 
     @ContributesAndroidInjector
-    abstract fun contributeMainActivity(): MainActivity
+    internal abstract fun contributeMainActivity(): MainActivity
 
 }

@@ -1,11 +1,22 @@
 package dev.vespertine.treasurehunt.models
 
+import androidx.room.Embedded
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "treasure_room")
 data class TreasureRoomTraversal(
+
+    @PrimaryKey
     val room_id: Int,
     val name : String,
     val description: String,
-    var northID: Int? = -1,
-    var southID: Int? = -1,
-    var eastID: Int? = -1,
-    var westID: Int? = -1
+
+    var north: Int? = null,
+
+    var south: Int? = null,
+
+    var east: Int? = null,
+
+    var west: Int? = null
 )

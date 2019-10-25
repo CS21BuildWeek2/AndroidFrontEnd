@@ -5,6 +5,7 @@ import dagger.BindsInstance
 import dagger.Component
 import dagger.android.support.AndroidSupportInjectionModule
 import dev.vespertine.treasurehunt.TreasureApp
+import dev.vespertine.treasurehunt.activity.MainActivity
 import dev.vespertine.treasurehunt.di.module.AppModule
 import dev.vespertine.treasurehunt.di.module.BuildersModule
 import dev.vespertine.treasurehunt.di.module.NetworkModule
@@ -12,7 +13,7 @@ import javax.inject.Singleton
 
 @Singleton
 @Component(modules = [(AndroidSupportInjectionModule::class),
-
+    (AppModule::class),
     (BuildersModule::class),
     (NetworkModule::class)])
 interface AppComponent {
@@ -27,4 +28,5 @@ interface AppComponent {
     }
 
     fun inject(instance: TreasureApp)
+    fun inject(activity: MainActivity)
 }

@@ -2,6 +2,7 @@ package dev.vespertine.treasurehunt.di.module
 
 import dagger.Module
 import dagger.Provides
+import dev.vespertine.treasurehunt.api.TreasureRoomApi
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
@@ -28,4 +29,9 @@ class NetworkModule {
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .build()
     }
+
+    @Provides
+    @Singleton
+    fun providesTreasureApiService(retrofit: Retrofit): TreasureRoomApi =
+        retrofit.create(TreasureRoomApi::class.java)
 }

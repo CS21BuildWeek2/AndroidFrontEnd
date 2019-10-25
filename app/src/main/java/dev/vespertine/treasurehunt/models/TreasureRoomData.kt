@@ -1,5 +1,8 @@
 package dev.vespertine.treasurehunt.models
 
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class TreasureRoomData(
     val cooldown: Double,
     val coordinates: String,
